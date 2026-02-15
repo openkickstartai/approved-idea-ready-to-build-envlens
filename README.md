@@ -52,28 +52,29 @@ EnvLens catches these issues in seconds, in CI, before they hit production.
 
 ## 💰 Pricing
 
-| Feature | Free | Pro $19/mo | Enterprise $99/mo |
-|---------|:----:|:----------:|:-----------------:|
+| Feature | Free | Pro $9/mo | Team $29/mo |
+|---------|:----:|:---------:|:-----------:|
 | Source code scanning (6 langs) | ✅ | ✅ | ✅ |
 | `.env` file scanning | ✅ | ✅ | ✅ |
 | Docker/K8s YAML scanning | ✅ | ✅ | ✅ |
-| Table & JSON output | ✅ | ✅ | ✅ |
-| SARIF output (GitHub Security) | ❌ | ✅ | ✅ |
-| `--fail-on-missing` CI gate | ❌ | ✅ | ✅ |
-| Terraform `.tf` scanning | ❌ | ✅ | ✅ |
-| Monorepo multi-root scan | ❌ | ✅ | ✅ |
-| Slack/webhook notifications | ❌ | ❌ | ✅ |
-| Custom naming rules | ❌ | ❌ | ✅ |
-| Priority support & SLA | ❌ | ❌ | ✅ |
+| Max config files | 3 | Unlimited | Unlimited |
+| Table output | ✅ | ✅ | ✅ |
+| JSON output | ❌ | ✅ | ✅ |
+| SARIF output (GitHub Security) | ❌ | ❌ | ✅ |
+| `--strict` CI mode | ❌ | ✅ | ✅ |
+| Slack/Webhook notifications | ❌ | ❌ | ✅ |
+| Custom rules | ❌ | ❌ | ✅ |
+| Priority support | ❌ | ✅ | ✅ |
 
-## 🏗️ CI Integration
+**Free** — Perfect for solo developers and small projects (up to 3 config files, table output only).  
+**Pro** — For professional developers who need CI integration, JSON output, and unlimited files.  
+**Team** — For teams that need notifications, SARIF, custom rules, and enterprise features.
 
-```yaml
-# .github/workflows/envlens.yml
-- name: EnvLens Check
-  run: python envlens.py . --fail-on-missing --format json
+Set your license key:
+```bash
+export ENVLENS_LICENSE_KEY=your_32_char_hex_license_key_here
 ```
 
-## License
+## 📖 Examples
 
-BSL 1.1 — Free for teams ≤5. Commercial license required for larger teams.
+See the [`examples/`](examples/) directory for CI integration examples including GitHub Actions.
